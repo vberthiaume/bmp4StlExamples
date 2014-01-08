@@ -5,21 +5,28 @@
 #include <iostream>
 #include "../bmp4CppLibrary/source/bmp4CppLibrary.h"
 #include <vector>
+#include <list>
+#include <string>
 
 using namespace std;
+
+
 
 void vectorTest(){
 
 	//empty vector of ints
 	vector<int> first;
-
+	string name = "first";
+	
+	//printVectorContent(name, first);
+	printVectorContent(name, first);
+	
 	// four ints with value 100
 	vector<int> second (4,100);
 
 	// iterating through second
 	vector<int> third (second.begin(),second.end());
-	
-	
+		
 	// a copy of third
 	vector<int> fourth (third);
 
@@ -27,18 +34,20 @@ void vectorTest(){
 	int myints[] = {16,2,77,29};
 	vector<int> fifth (myints, myints + sizeof(myints) / sizeof(int) );
 
-	cout << "The contents of fifth are:";
-  
-	for (std::vector<int>::iterator it = fifth.begin(); it != fifth.end(); ++it)
-	{
-	cout << ' ' << *it;
-	}
-  
-	cout << endl;
-  
-	
+ }
 
+void listTest()
+{
+	//int list of 5 items all initialized to 10
+    std::list <int> l( 5,10 );  
+    std::list <int>:: const_iterator cb = l.begin (), ce = l.end ();
+
+    while ( cb != ce){
+         std::cout << *cb++;
+    }
 }
+
+
 
 
 int _tmain(int argc, _TCHAR* argv[])
