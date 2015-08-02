@@ -1,9 +1,15 @@
 // bmp4ContainerTests.cpp : Defines the entry point for the console application.
 //
 
+#if __WINDOWS__
+
 #include "stdafx.h"
+
+#endif
+
 #include <iostream>
-#include "../bmp4CppLibrary/source/bmp4CppLibrary.h"
+#include "../../bmp4CppLibrary/source/bmp4CppLibrary.h"
+//#include "../../bmp4CppLibrary/source/bmp4CppLibrary.cpp"
 #include <vector>
 #include <list>
 #include <string>
@@ -50,11 +56,13 @@ void listTest()
 
 
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-	checkLibraryLoaded();
+//int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, const char * argv[]){
+    //for some crazy reason I can't figure out how to link to this! Ah, i don't think this is a linker issue, it's because
+    //checkBmp4LibraryLoaded is in the .cpp, which is unaccessible, while printVectorContent, called above, is in bmp4CppLibrary/source/bmp4CppLibrary.h
+	//checkBmp4LibraryLoaded();
 	vectorTest();
 	
-	//return 0;
+	return 0;
 }
 
