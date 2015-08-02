@@ -1,2 +1,4 @@
-bmp4ContainerTests
+bmp4StlExamples
 ==================
+
+Some simple STL examples!
